@@ -41,7 +41,7 @@ export const handleVisaCallback = async (req, res) => {
     savePaymentResult(purchaseNumber, paymentResult);
 
     // Redirigir al frontend con solo el purchaseNumber
-    const redirectUrl = `http://31.97.218.15:4173/client/reservations/${reservation}?purchaseNumber=${purchaseNumber}`;
+    const redirectUrl = `https://app.labase.pe/client/reservations/${reservation}?purchaseNumber=${purchaseNumber}`;
 
     console.log("Redirigiendo a:", redirectUrl);
     res.redirect(302, redirectUrl);
@@ -58,7 +58,7 @@ export const handleVisaCallback = async (req, res) => {
     savePaymentResult(purchaseNumber, errorResult);
 
     // Redirigir al frontend incluso en caso de error
-    const redirectUrl = `http://31.97.218.15:4173/client/reservations/${reservation}?purchaseNumber=${purchaseNumber}`;
+    const redirectUrl = `https://app.labase.pe/client/reservations/${reservation}?purchaseNumber=${purchaseNumber}`;
     res.redirect(302, redirectUrl);
   }
 };
